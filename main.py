@@ -1,4 +1,4 @@
-
+# Importing the classes from the files
 from customer import *
 
 
@@ -9,7 +9,7 @@ login=Login()
 
 
 # Main method to run the store
-def main():
+def main():      
         print("\t\tWelcome To ARY Store.")
 
         # Display options in loop 
