@@ -14,7 +14,7 @@ class Login(Registration):
 
     # Method to take user_id input for login 
     # Disclaimer: Method overriding here 
-    def get_user_id(self):
+    def get_users_id(self):
         """This is the method to take user-id input from user to check its credentials for login
            also here method overriding performs as the same name method also exist in parent class
            that is regirstation method name get_user_id."""
@@ -60,7 +60,7 @@ class Login(Registration):
             
 
     #Method to take password input
-    def get_password(self):
+    def get_passsword(self):
         """This method is to take password input for login.checking in database if password matches or not
             also here method overriding performs that in parent class same method exist"""
         
@@ -226,7 +226,7 @@ class Login(Registration):
             # Seller one
             if choice=="1":
                 # calling respective methods
-                user_id=self.get_user_id()
+                user_id=self.get_users_id()
                 # Checking here that account_type is seller or not
                 data=super().extract_data_from_accounts_table()
 
@@ -234,7 +234,7 @@ class Login(Registration):
                     # checking if user_id matches with user_id and account type is seller
                     if user_id==items[4] and items[7]=="seller":
                         # calling password method
-                        password=self.get_password()
+                        password=self.get_passsword()
                         if password:
                             captcha=self.verify_captcha()
                             if captcha:
@@ -253,7 +253,7 @@ class Login(Registration):
                 
 
                 # calling respective methods
-                user_id=self.get_user_id()
+                user_id=self.get_users_id()
 
                 # Checking here that account_type is customer or not
                 data=super().extract_data_from_accounts_table()
@@ -262,7 +262,7 @@ class Login(Registration):
                 for items in data:
                     if user_id==items[4] and items[7]=="customer":
                         # calling password method
-                        password=self.get_password()
+                        password=self.get_passsword()
                         if password:
                             captcha=self.verify_captcha()
                             if captcha:
