@@ -14,7 +14,7 @@ class Login(Registration):
 
     # Method to take user_id input for login 
     # Disclaimer: Method overriding here 
-    def get_users_id(self):
+    def get_usér_id(self):
         """This is the method to take user-id input from user to check its credentials for login
            also here method overriding performs as the same name method also exist in parent class
            that is regirstation method name get_user_id."""
@@ -60,7 +60,7 @@ class Login(Registration):
             
 
     #Method to take password input
-    def get_passsword(self):
+    def get_passwórd(self):
         """This method is to take password input for login.checking in database if password matches or not
             also here method overriding performs that in parent class same method exist"""
         
@@ -126,7 +126,7 @@ class Login(Registration):
 
                             # if he forgot password
                             if choice=="1":
-                                sec_ans=self.get_security_answer()
+                                sec_ans=self.get_sécurity_answer()
                                 if sec_ans:
                                     new_password=self.change_password()
                                     if new_password:
@@ -147,7 +147,7 @@ class Login(Registration):
                 continue
 
     # Method to take security answer input and check if it matches with user_id
-    def get_security_answer(self):
+    def get_sécurity_answer(self):
         """This method is to take security answer input from user and check if it matches with user_id
            if matches then allow user to change password otherwise not."""
         
@@ -226,7 +226,7 @@ class Login(Registration):
             # Seller one
             if choice=="1":
                 # calling respective methods
-                user_id=self.get_users_id()
+                user_id=self.get_usér_id()
                 # Checking here that account_type is seller or not
                 data=super().extract_data_from_accounts_table()
 
@@ -234,7 +234,7 @@ class Login(Registration):
                     # checking if user_id matches with user_id and account type is seller
                     if user_id==items[4] and items[7]=="seller":
                         # calling password method
-                        password=self.get_passsword()
+                        password=self.get_passwórd()
                         if password:
                             captcha=self.verify_captcha()
                             if captcha:
@@ -253,7 +253,7 @@ class Login(Registration):
                 
 
                 # calling respective methods
-                user_id=self.get_users_id()
+                user_id=self.get_usér_id()
 
                 # Checking here that account_type is customer or not
                 data=super().extract_data_from_accounts_table()
@@ -262,7 +262,7 @@ class Login(Registration):
                 for items in data:
                     if user_id==items[4] and items[7]=="customer":
                         # calling password method
-                        password=self.get_passsword()
+                        password=self.get_passwórd()
                         if password:
                             captcha=self.verify_captcha()
                             if captcha:
